@@ -1,3 +1,4 @@
+import 'package:amazon_clone/views/home_screen.dart';
 import 'package:flutter/widgets.dart';
 
 const double kAppBarHeight = 80;
@@ -18,7 +19,7 @@ const List<String> categoriesList = [
 ];
 
 const List<Widget> screens = [
-  Center(child: Text('Home screen')),
+  HomeScreen(),
   Center(child: Text('Account screen')),
   Center(child: Text('Cart screen')),
   Center(child: Text('More screen')),

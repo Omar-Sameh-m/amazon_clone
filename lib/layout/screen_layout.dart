@@ -3,6 +3,8 @@ import 'package:amazon_clone/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class ScreenLayout extends StatefulWidget {
+ 
+ 
   const ScreenLayout({super.key});
 
   @override
