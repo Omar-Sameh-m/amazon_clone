@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 const double kAppBarHeight = 80;
 
 const String amazonLogoUrl =
@@ -12,7 +14,14 @@ const List<String> categoriesList = [
   "Fresh",
   "Appliances",
   "Books, Toys",
-  "Essential"
+  "Essential",
+];
+
+const List<Widget> screens = [
+  Center(child: Text('Home screen')),
+  Center(child: Text('Account screen')),
+  Center(child: Text('Cart screen')),
+  Center(child: Text('More screen')),
 ];
 
 const List<String> categoryLogos = [
@@ -46,7 +55,7 @@ const List<String> adItemNames = [
   "Amazon Pay",
   "Recharge",
   "Rewards",
-  "Pay Bills"
+  "Pay Bills",
 ];
 
 //Dont even attemp to scroll to the end of this manually lmao

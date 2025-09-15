@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:amazon_clone/layout/screen_layout.dart';
 import 'package:amazon_clone/utils/colors_theme.dart';
 import 'package:amazon_clone/views/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,12 +48,7 @@ class AmazonClone extends StatelessWidget {
               child: CircularProgressIndicator(color: yellowColor),
             );
           } else if (user.hasData) {
-            return ElevatedButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              },
-              child: Text('Sign out'),
-            );
+            return const ScreenLayout();
           } else {
             return const SignInScreen();
           }
