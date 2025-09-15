@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "101011406058",
+    "project_id": "clone-2c230",
+    "storage_bucket": "clone-2c230.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101011406058:android:fb9e0049aaed5a3fb0eb93",
+        "android_client_info": {
+          "package_name": "omar.app.amazon_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG65RIMXD_imZQ6OHyhEzVkjxoJx4tcic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
