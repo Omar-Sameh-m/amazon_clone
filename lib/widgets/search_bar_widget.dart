@@ -1,6 +1,7 @@
 import 'package:amazon_clone/utils/colors_theme.dart';
 import 'package:amazon_clone/utils/constants.dart';
 import 'package:amazon_clone/utils/utils.dart';
+import 'package:amazon_clone/views/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -23,6 +24,7 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
       borderSide: BorderSide(color: Colors.grey, width: 1),
     );
     return Container(
+      height: kAppBarHeight,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: backgroundGradient,
@@ -34,12 +36,30 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           hasBackButton
-              ? IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back))
+              ? IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back),
+                )
               : Container(),
 
           SizedBox(
             width: screenSize.width * 0.7,
             child: TextField(
+              readOnly: isReadOnly,
+              onTap: () {
+                if (isReadOnly) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SearchScreen();
+                      },
+                    ),
+                  );
+                }
+              },
               decoration: InputDecoration(
                 hintText: 'Search for something in amazon.com',
                 fillColor: Colors.white,
