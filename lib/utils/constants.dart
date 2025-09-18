@@ -1,4 +1,6 @@
+import 'package:amazon_clone/views/account_screen.dart';
 import 'package:amazon_clone/views/home_screen.dart';
+import 'package:amazon_clone/widgets/simple_product_widget.dart';
 import 'package:flutter/widgets.dart';
 
 const double kAppBarHeight = 80;
@@ -20,7 +22,7 @@ const List<String> categoriesList = [
 
 const List<Widget> screens = [
   HomeScreen(),
-  Center(child: Text('Account screen')),
+  AccountScreen(),
   Center(child: Text('Cart screen')),
   Center(child: Text('More screen')),
 ];
@@ -62,3 +64,20 @@ const List<String> adItemNames = [
 //Dont even attemp to scroll to the end of this manually lmao
 const String amazonLogo =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png";
+
+
+
+List<Widget> testChildren = [
+    SimpleProductWidget(
+      url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
+    ),
+    SimpleProductWidget(
+      url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
+    ),
+    SimpleProductWidget(
+      url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
+    ),
+    SimpleProductWidget(
+      url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
+    ),
+  ];
