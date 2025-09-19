@@ -1,6 +1,7 @@
 import 'package:amazon_clone/views/account_screen.dart';
 import 'package:amazon_clone/views/cart_screen.dart';
 import 'package:amazon_clone/views/home_screen.dart';
+import 'package:amazon_clone/views/more_screen.dart';
 import 'package:amazon_clone/widgets/simple_product_widget.dart';
 import 'package:flutter/widgets.dart';
 
@@ -25,7 +26,7 @@ const List<Widget> screens = [
   HomeScreen(),
   AccountScreen(),
   CartScreen(),
-  Center(child: Text('More screen')),
+  MoreScreen(),
 ];
 
 const List<String> categoryLogos = [
@@ -66,19 +67,17 @@ const List<String> adItemNames = [
 const String amazonLogo =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png";
 
-
-
 List<Widget> testChildren = [
-    SimpleProductWidget(
-      url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
-    ),
-    SimpleProductWidget(
-      url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
-    ),
-    SimpleProductWidget(
-      url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
-    ),
-    SimpleProductWidget(
-      url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
-    ),
-  ];
+  SimpleProductWidget(
+    url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
+  ),
+  SimpleProductWidget(
+    url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
+  ),
+  SimpleProductWidget(
+    url: "https://m.media-amazon.com/images/I/51QISbJp5-L._SX3000_.jpg",
+  ),
+  SimpleProductWidget(
+    url: "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
+  ),
+];
