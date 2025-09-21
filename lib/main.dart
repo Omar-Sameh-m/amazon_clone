@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:amazon_clone/layout/screen_layout.dart';
 import 'package:amazon_clone/utils/colors_theme.dart';
+import 'package:amazon_clone/views/results_screen.dart';
 import 'package:amazon_clone/views/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

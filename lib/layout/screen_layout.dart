@@ -3,8 +3,6 @@ import 'package:amazon_clone/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class ScreenLayout extends StatefulWidget {
- 
- 
   const ScreenLayout({super.key});
 
   @override
@@ -34,7 +32,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
       child: Scaffold(
         body: PageView(
           controller: pageController,
-          children: screens ,
+          children: screens, // screens list hold the diffrent pages
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
