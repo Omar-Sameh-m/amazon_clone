@@ -1,6 +1,7 @@
 import 'package:amazon_clone/models/product_model.dart';
 import 'package:amazon_clone/utils/colors_theme.dart';
 import 'package:amazon_clone/utils/utils.dart';
+import 'package:amazon_clone/views/product_screen.dart';
 import 'package:amazon_clone/widgets/custom_simple_rounded_button.dart';
 import 'package:amazon_clone/widgets/custom_square_button.dart';
 import 'package:amazon_clone/widgets/product_info_widget.dart';
@@ -27,25 +28,36 @@ class CartItemWidget extends StatelessWidget {
           children: [
             Expanded(
               flex: 3,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: screenSize.width / 3,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: AspectRatio(
-                        aspectRatio: 1 / 1,
-                        child: Image.network(productModel.url),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProductScreen(productModel: productModel),
+                    ),
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: screenSize.width / 3,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: AspectRatio(
+                          aspectRatio: 1 / 1,
+                          child: Image.network(productModel.url),
+                        ),
                       ),
                     ),
-                  ),
-                  ProductInfoWidget(
-                    productName: productModel.productName,
-                    cost: productModel.cost,
-                    sellerName: productModel.sellerName,
-                  ),
-                ],
+                    ProductInfoWidget(
+                      productName: productModel.productName,
+                      cost: productModel.cost,
+                      sellerName: productModel.sellerName,
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
