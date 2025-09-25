@@ -126,21 +126,11 @@ lib/
 └── widgets/        # Reusable UI components
 ```
 
-## Mockups
+## Mockup
+<img width="3369" height="3369" alt="amazon_clone_mockup" src="https://github.com/user-attachments/assets/657aa2f3-aee3-439e-a6b8-115ff9d48a4b" />
 
-*Add your app mockups and screenshots here*
 
-### Home Screen Mockup
-![Home Screen](path/to/home_mockup.png)
 
-### Product Details Mockup
-![Product Details](path/to/product_mockup.png)
-
-### Cart Screen Mockup
-![Cart Screen](path/to/cart_mockup.png)
-
-### Account Screen Mockup
-![Account Screen](path/to/account_mockup.png)
 
 ## Contributing
 
