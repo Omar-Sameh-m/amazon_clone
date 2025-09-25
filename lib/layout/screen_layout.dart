@@ -1,6 +1,8 @@
+import 'package:amazon_clone/blocs/user_details/user_details_bloc.dart';
 import 'package:amazon_clone/utils/colors_theme.dart';
 import 'package:amazon_clone/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ScreenLayout extends StatefulWidget {
   const ScreenLayout({super.key});
@@ -12,6 +14,15 @@ class ScreenLayout extends StatefulWidget {
 class _ScreenLayoutState extends State<ScreenLayout> {
   PageController pageController = PageController();
   int currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<UserDetailsBloc>().add(FetchUserDetails());
+    });
+  }
+
   @override
   void dispose() {
     super.dispose();
@@ -33,7 +44,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
         child: Scaffold(
           body: PageView(
             controller: pageController,
-            children: screens, // screens list hold the diffrent pages
+            children: screens,
           ),
           bottomNavigationBar: Container(
             decoration: BoxDecoration(

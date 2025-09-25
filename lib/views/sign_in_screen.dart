@@ -91,7 +91,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               isLoading = false;
                             });
                             if (output == 'success') {
-                              //setState(() {});
+                              setState(() {});
                             } else {
                               Utils().showSnackBar(
                                 context: context,

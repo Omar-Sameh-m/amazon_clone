@@ -4,33 +4,33 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthMethods {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  CloudFirestoreMethods cloudFirestoreMethods = CloudFirestoreMethods();
+  CloudFirestoreMethods cloudFirestoreClass = CloudFirestoreMethods();
+
   Future<String> signUpUser({
     required String name,
     required String address,
     required String email,
     required String password,
   }) async {
-    name = name.trim();
-    address = address.trim();
-    email = email.trim();
-    password = password.trim();
-    String output = 'Something went wrong';
-    if (name != '' && address != '' && email != '' && password != '') {
+    name.trim();
+    address.trim();
+    email.trim();
+    password.trim();
+    String output = "Something went wrong";
+    if (name != "" && address != "" && email != "" && password != "") {
       try {
         await firebaseAuth.createUserWithEmailAndPassword(
           email: email,
           password: password,
         );
-
-        UserDetailsModel user = UserDetailsModel(address: address, name: name);
-        await cloudFirestoreMethods.uploadNameAndAdressToDatabase(user: user);
-        output = 'Success';
+        UserDetailsModel user = UserDetailsModel(name: name, address: address);
+        await cloudFirestoreClass.uploadNameAndAddressToDatabase(user: user);
+        output = "success";
       } on FirebaseAuthException catch (e) {
         output = e.message.toString();
       }
     } else {
-      output = 'Please fill up everything';
+      output = "Please fill up all the fields.";
     }
     return output;
   }
@@ -39,22 +39,21 @@ class AuthMethods {
     required String email,
     required String password,
   }) async {
-    email = email.trim();
-    password = password.trim();
-    String output = 'Something went wrong';
-    if (email != '' && password != '') {
+    email.trim();
+    password.trim();
+    String output = "Something went wrong";
+    if (email != "" && password != "") {
       try {
         await firebaseAuth.signInWithEmailAndPassword(
           email: email,
           password: password,
         );
-
-        output = 'success';
+        output = "success";
       } on FirebaseAuthException catch (e) {
         output = e.message.toString();
       }
     } else {
-      output = 'Please fill up everything';
+      output = "Please fill up all the fields.";
     }
     return output;
   }

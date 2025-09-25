@@ -1,12 +1,8 @@
-import 'package:amazon_clone/blocs/auth/auth_state.dart';
+import 'package:amazon_clone/blocs/user_details/user_details_bloc.dart';
 import 'package:amazon_clone/layout/screen_layout.dart';
-import 'package:amazon_clone/repositories/auth_repository.dart';
-import 'package:amazon_clone/repositories/product_repository.dart';
-import 'package:amazon_clone/blocs/auth/auth_cubit.dart';
-import 'package:amazon_clone/blocs/product/product_cubit.dart';
-import 'package:amazon_clone/blocs/cart/cart_cubit.dart';
 import 'package:amazon_clone/utils/colors_theme.dart';
 import 'package:amazon_clone/views/sign_in_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -34,46 +30,31 @@ void main() async {
 }
 
 class AmazonClone extends StatelessWidget {
-  const AmazonClone({super.key});
+  const AmazonClone({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MultiRepositoryProvider(
-      providers: [
-        RepositoryProvider(create: (_) => AuthRepository()),
-        RepositoryProvider(create: (_) => ProductRepository()),
-      ],
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (context) =>
-                AuthCubit(context.read<AuthRepository>())..checkAuthStatus(),
-          ),
-          BlocProvider(
-            create: (context) =>
-                ProductCubit(context.read<ProductRepository>()),
-          ),
-          BlocProvider(create: (_) => CartCubit()),
-        ],
-        child: MaterialApp(
-          title: 'Amazon Clone',
-          theme: ThemeData.light().copyWith(
-            scaffoldBackgroundColor: backgroundColor,
-          ),
-          debugShowCheckedModeBanner: false,
-          home: BlocBuilder<AuthCubit, AuthState>(
-            builder: (context, state) {
-              if (state is AuthLoading) {
-                return const Center(
-                  child: CircularProgressIndicator(color: yellowColor),
-                );
-              } else if (state is AuthAuthenticated) {
-                return const ScreenLayout();
-              } else {
-                return const SignInScreen();
-              }
-            },
-          ),
+    return BlocProvider<UserDetailsBloc>(
+      create: (context) => UserDetailsBloc(),
+      child: MaterialApp(
+        title: "Amazon Clone",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: backgroundColor,
+        ),
+        home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, AsyncSnapshot<User?> user) {
+            if (user.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(color: Colors.orange),
+              );
+            } else if (user.hasData) {
+              return const ScreenLayout();
+            } else {
+              return const SignInScreen();
+            }
+          },
         ),
       ),
     );

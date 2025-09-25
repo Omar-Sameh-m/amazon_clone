@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:amazon_clone/resources/auth_methods.dart';
 import 'package:amazon_clone/utils/colors_theme.dart';
 import 'package:amazon_clone/utils/constants.dart';

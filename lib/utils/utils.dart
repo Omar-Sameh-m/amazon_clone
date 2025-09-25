@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:amazon_clone/utils/colors_theme.dart';
@@ -32,5 +33,9 @@ class Utils {
     ImagePicker picker = ImagePicker();
     XFile? file = await picker.pickImage(source: ImageSource.gallery);
     return file!.readAsBytes();
+  }
+
+  String getUid() {
+    return '${DateTime.now().millisecondsSinceEpoch}${Random().nextInt(1000000)}';
   }
 }

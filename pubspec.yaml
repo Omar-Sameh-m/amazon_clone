@@ -37,12 +37,13 @@ dependencies:
   cloud_firestore: ^6.0.1
   firebase_auth: ^6.0.2
   firebase_core: ^4.1.0
-  firebase_storage: ^13.0.1
   rating_dialog: ^2.0.4
-  provider: ^6.1.5+1
   flutter_bloc: ^9.1.1
   equatable: ^2.0.7
   image_picker: ^1.2.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+  universal_html: ^2.2.4
 
 dev_dependencies:
   flutter_test:
