@@ -127,9 +127,8 @@ lib/
 ```
 
 ## Mockup
-<img width="3369" height="3369" alt="amazon_clone_mockup" src="https://github.com/user-attachments/assets/657aa2f3-aee3-439e-a6b8-115ff9d48a4b" />
 
-
+<img width="3369" height="3369" alt="amazon_clone_mockup" src="https://github.com/user-attachments/assets/b8ee0eb1-7e56-4ac8-9091-b24dcb2a3b3d" />
 
 
 ## Contributing
