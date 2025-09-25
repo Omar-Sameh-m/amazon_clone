@@ -149,13 +149,3 @@ lib/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Inspired by Amazon's e-commerce platform
-- Built with Flutter and Firebase
-- Thanks to the open-source community for amazing packages
