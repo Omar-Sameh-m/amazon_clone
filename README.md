@@ -135,6 +135,9 @@ lib/
 
 <img width="761" height="962" alt="Screenshot 2025-09-26 015626" src="https://github.com/user-attachments/assets/409d3232-40aa-448d-a058-c66a48c43cfa" />
 
+<img width="766" height="967" alt="Screenshot 2025-09-26 163142" src="https://github.com/user-attachments/assets/f2dee888-f19a-4cd2-bd19-159d2ff2e213" />
+
+
 
 
 ## Contributing
