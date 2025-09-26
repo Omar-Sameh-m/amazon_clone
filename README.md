@@ -130,6 +130,12 @@ lib/
 
 <img width="3369" height="3369" alt="amazon_clone_mockup" src="https://github.com/user-attachments/assets/b8ee0eb1-7e56-4ac8-9091-b24dcb2a3b3d" />
 
+<img width="766" height="914" alt="Screenshot 2025-09-26 015247" src="https://github.com/user-attachments/assets/766cfc36-fbad-4675-8c6d-ccf034bb5918" />
+
+
+<img width="761" height="962" alt="Screenshot 2025-09-26 015626" src="https://github.com/user-attachments/assets/409d3232-40aa-448d-a058-c66a48c43cfa" />
+
+
 
 ## Contributing
 
