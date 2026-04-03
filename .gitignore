@@ -19,7 +19,8 @@ migrate_working_dir/
 .idea/
 
 # The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
+# VS Code which you may wish to be included in
+# version control, so this line
 # is commented out by default.
 #.vscode/
 
@@ -43,3 +44,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Security - Sensitive Configuration Files
+# NEVER commit these files
+.env
+.env.local
+.env.*.local
+firebase_config.json
+google-services.json
+GoogleService-Info.plist
